@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://fkl2hxb7msxe"]
+
+[ext_resource type="Script" uid="uid://dfq7ac36s3j4a" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 193.0
+offset_right = 429.0
+offset_bottom = 329.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Singleplayer"
+
+[node name="MultiPlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MultiPlayer" to="." method="_on_multi_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

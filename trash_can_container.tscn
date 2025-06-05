@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bht7r0u3quk7b"]
+
+[ext_resource type="Texture2D" uid="uid://cd4v7ptfbq2up" path="res://Assets/png/trash can/selective - front/5.png" id="1_bsy46"]
+[ext_resource type="Texture2D" uid="uid://cetu3pbxuyhfl" path="res://Assets/png/trash can/selective - front/4.png" id="2_lgq00"]
+[ext_resource type="Texture2D" uid="uid://cyfke1cfcxp7y" path="res://Assets/png/trash can/selective - front/6.png" id="3_5dfql"]
+
+[node name="TrashCanContainer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(217, 52)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("1_bsy46")
+
+[node name="TrashCan2" type="Sprite2D" parent="."]
+position = Vector2(289, 53)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_lgq00")
+
+[node name="TrashCan3" type="Sprite2D" parent="."]
+position = Vector2(369, 53)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("3_5dfql")
