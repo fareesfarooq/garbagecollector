@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3y0qwtkr4bnn"]
+[gd_scene load_steps=4 format=3 uid="uid://c3y0qwtkr4bnn"]
 
 [ext_resource type="Script" uid="uid://po0goktnm5x4" path="res://options.gd" id="1_5v8ap"]
+[ext_resource type="VideoStream" uid="uid://ck3uqru5fgt8o" path="res://Assets/bg.ogv" id="2_se8ut"]
+[ext_resource type="Theme" uid="uid://cyuvskrgss0fg" path="res://menu.tres" id="3_ao2gm"]
 
-[node name="Menu" type="Control"]
+[node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,31 +15,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5v8ap")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_se8ut")
+autoplay = true
+loop = true
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 763.0
+offset_top = 325.0
+offset_right = 866.0
+offset_bottom = 461.0
+scale = Vector2(3.48, 3.2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Singleplayer"
+text = "Volume"
 
-[node name="MultiPlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Multiplayer"
+theme = ExtResource("3_ao2gm")
+max_value = 1.5
+step = 0.001
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+theme = ExtResource("3_ao2gm")
+selected = 0
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1920x720"
+popup/item_1/id = 1
+popup/item_2/text = "800x600"
+popup/item_2/id = 2
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme = ExtResource("3_ao2gm")
+text = "Back
+"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MultiPlayer" to="." method="_on_multi_player_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

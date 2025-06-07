@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cyuvskrgss0fg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+bg_color = Color(0.124264, 0.619772, 1, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
+bg_color = Color(0, 0.646557, 0.90914, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.124264, 0.619772, 1, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x383"]
+bg_color = Color(0.124264, 0.619772, 1, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsmre"]
+bg_color = Color(0.124264, 0.619772, 1, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3icr"]
+bg_color = Color(0.124264, 0.619772, 1, 1)
+border_width_bottom = 5
+border_color = Color(0, 0.484814, 0.808932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 6
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxFlat_ouk20")
+Button/styles/hover = SubResource("StyleBoxFlat_mae5d")
+Button/styles/normal = SubResource("StyleBoxFlat_4hy44")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5x383")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_bsmre")
+HSlider/styles/slider = SubResource("StyleBoxFlat_y3icr")
+OptionButton/styles/disabled = null

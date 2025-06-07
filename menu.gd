@@ -8,7 +8,7 @@ func _on_multi_player_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://options.tscn")
 
 
 func _on_quit_pressed():
