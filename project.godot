@@ -26,6 +26,11 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
+[gui]
+
+theme/custom="uid://dwwyrjjhymh8l"
+theme/custom_font="uid://dwwyrjjhymh8l"
+
 [input_devices]
 
 pointing/vsync/vsync_mode=0

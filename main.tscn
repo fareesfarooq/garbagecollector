@@ -49,7 +49,7 @@ _spawnable_scenes = PackedStringArray("uid://cr68m2ptisg1b")
 spawn_path = NodePath("..")
 
 [node name="Node2D" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(-419, -189)
+position = Vector2(-370, -177)
 
 [node name="TrashContainer" parent="." instance=ExtResource("3_h2yge")]
 script = null

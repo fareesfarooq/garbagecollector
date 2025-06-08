@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://fkl2hxb7msxe"]
 
 [ext_resource type="Script" uid="uid://dfq7ac36s3j4a" path="res://menu.gd" id="1_lti8b"]
-[ext_resource type="VideoStream" uid="uid://ck3uqru5fgt8o" path="res://Assets/bg.ogv" id="2_ouk20"]
-[ext_resource type="Theme" uid="uid://cyuvskrgss0fg" path="res://menu.tres" id="3_mae5d"]
+[ext_resource type="Texture2D" uid="uid://c282et7sdmvaf" path="res://Assets/bg.png" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://b8dbljs7s4tef" path="res://Assets/orion.png" id="3_ytr4m"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -15,43 +15,50 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lti8b")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(961, 542)
+texture = ExtResource("2_4hy44")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(113, 1041)
+scale = Vector2(0.212037, 0.212037)
+texture = ExtResource("3_ytr4m")
+
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("2_ouk20")
-autoplay = true
-loop = true
+offset_left = 1731.0
+offset_top = 1041.0
+offset_right = 1875.0
+offset_bottom = 1069.0
+scale = Vector2(1.31, 1.31)
+theme_override_font_sizes/font_size = 20
+text = "Version 0.1"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 763.0
-offset_top = 325.0
-offset_right = 866.0
-offset_bottom = 461.0
-scale = Vector2(3.48, 3.2)
+offset_left = 711.905
+offset_top = 305.86
+offset_right = 894.29
+offset_bottom = 485.86
+scale = Vector2(2.81, 2.97)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_mae5d")
 text = "Singleplayer"
 
 [node name="MultiPlayer" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_mae5d")
 text = "Multiplayer"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_mae5d")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_mae5d")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
