@@ -96,35 +96,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_oudfo")
 }],
 "loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kpjcp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtqjt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ncpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wi0c6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hp6x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tkgg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l6ohk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oudfo")
-}],
-"loop": true,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -156,39 +127,10 @@ animations = [{
 "loop": true,
 "name": &"walk_right",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kpjcp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtqjt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ncpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wi0c6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hp6x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tkgg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l6ohk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oudfo")
-}],
-"loop": true,
-"name": &"walk_up",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
-size = Vector2(76, 56)
+size = Vector2(61, 56)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kpjcp"]
 properties/0/path = NodePath(".:position")
@@ -196,6 +138,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(407, 115)
 script = ExtResource("1_kpjcp")
 metadata/_edit_group_ = true
 
@@ -204,10 +147,10 @@ texture_filter = 1
 position = Vector2(-3, 3.5)
 scale = Vector2(5.1875, 4.78125)
 sprite_frames = SubResource("SpriteFrames_xhfnw")
-animation = &"walk_right"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 52)
+position = Vector2(-6.5, 52)
 shape = SubResource("RectangleShape2D_xhfnw")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
