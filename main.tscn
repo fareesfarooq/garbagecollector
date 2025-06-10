@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://jdmftq25ymnw"]
+[gd_scene load_steps=6 format=3 uid="uid://jdmftq25ymnw"]
 
 [ext_resource type="Script" uid="uid://duxgvv7g1e308" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://i4ajthwt87g8" path="res://level1.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://djbwx4cbxnto5" path="res://trash.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bht7r0u3quk7b" path="res://trash_can_container.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bf0xlgu4485b0" path="res://level_2.tscn" id="5_lquwl"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(434, 200)
@@ -56,6 +57,9 @@ script = null
 
 [node name="TrashCanContainer" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(-367, -177)
+
+[node name="Level2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-677, -303)
 
 [connection signal="pressed" from="UI/Multiplayer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="UI/Multiplayer/VBoxContainer/Join" to="." method="_on_join_pressed"]

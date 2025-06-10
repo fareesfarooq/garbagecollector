@@ -20,8 +20,8 @@ position = Vector2(961, 542)
 texture = ExtResource("2_4hy44")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(147, 1045)
-scale = Vector2(0.481363, 0.512934)
+position = Vector2(113, 1041)
+scale = Vector2(0.212037, 0.212037)
 texture = ExtResource("3_ytr4m")
 
 [node name="Label" type="Label" parent="."]
@@ -36,11 +36,11 @@ text = "Version 0.1"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 711.025
-offset_top = 290.38
-offset_right = 918.91
-offset_bottom = 516.38
-scale = Vector2(2.29, 2.41796)
+offset_left = 711.905
+offset_top = 305.86
+offset_right = 894.29
+offset_bottom = 485.86
+scale = Vector2(2.81, 2.97)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -57,10 +57,6 @@ text = "Multiplayer"
 layout_mode = 2
 text = "Options"
 
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
@@ -68,5 +64,4 @@ text = "Quit"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MultiPlayer" to="." method="_on_multi_player_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
