@@ -100,8 +100,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
-size = Vector2(133, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
+radius = 20.0
+height = 40.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kpjcp"]
 properties/0/path = NodePath(".:position")
@@ -109,7 +110,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(4, 20)
+position = Vector2(195, -28)
 collision_layer = 3
 script = ExtResource("1_kpjcp")
 metadata/_edit_group_ = true
@@ -121,8 +122,9 @@ sprite_frames = SubResource("SpriteFrames_xhfnw")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_xhfnw")
+position = Vector2(-4, 50)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_kpjcp")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_kpjcp")
