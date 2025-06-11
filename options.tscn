@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3y0qwtkr4bnn"]
+[gd_scene load_steps=5 format=3 uid="uid://c3y0qwtkr4bnn"]
 
 [ext_resource type="Script" uid="uid://po0goktnm5x4" path="res://options.gd" id="1_5v8ap"]
-[ext_resource type="VideoStream" uid="uid://ck3uqru5fgt8o" path="res://Assets/bg.ogv" id="2_se8ut"]
-[ext_resource type="Theme" uid="uid://cyuvskrgss0fg" path="res://menu.tres" id="3_ao2gm"]
+[ext_resource type="Theme" uid="uid://dwwyrjjhymh8l" path="res://Assets/kenneyUI-yellow.tres" id="1_07a1d"]
+[ext_resource type="Texture2D" uid="uid://c282et7sdmvaf" path="res://Assets/bg.png" id="2_07a1d"]
+[ext_resource type="Texture2D" uid="uid://b8dbljs7s4tef" path="res://Assets/orion.png" id="3_p8250"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -13,8 +14,10 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_07a1d")
 script = ExtResource("1_5v8ap")
 
+<<<<<<< HEAD
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 1920.0
@@ -22,31 +25,69 @@ offset_bottom = 1080.0
 stream = ExtResource("2_se8ut")
 autoplay = true
 loop = true
+=======
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(961, 542)
+texture = ExtResource("2_07a1d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(113, 1041)
+scale = Vector2(0.212037, 0.212037)
+texture = ExtResource("3_p8250")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1734.0
+offset_top = 1041.0
+offset_right = 1878.0
+offset_bottom = 1069.0
+scale = Vector2(1.31, 1.31)
+theme_override_font_sizes/font_size = 20
+text = "Version 0.1"
+
+[node name="Mute" type="Label" parent="."]
+layout_mode = 2
+offset_left = 896.0
+offset_top = 553.0
+offset_right = 1078.0
+offset_bottom = 571.0
+scale = Vector2(3.81484, 4.78416)
+theme = ExtResource("1_07a1d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Mute"
+>>>>>>> 9c2375924da281d362c5cc5ea77544882172bc39
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 763.0
-offset_top = 325.0
-offset_right = 866.0
-offset_bottom = 461.0
-scale = Vector2(3.48, 3.2)
+offset_left = 711.43
+offset_top = 305.0
+offset_right = 893.43
+offset_bottom = 485.0
+scale = Vector2(2.81, 2.97)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_07a1d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Volume"
 
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_ao2gm")
 max_value = 1.5
 step = 0.001
 
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_ao2gm")
 selected = 0
 item_count = 3
 popup/item_0/text = "1920x1080"
@@ -58,10 +99,10 @@ popup/item_2/id = 2
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_ao2gm")
 text = "Back
 "
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://xxcy1ydtfjjq"]
+
+[ext_resource type="Texture2D" uid="uid://bjm8dwp37uxi3" path="res://Assets/credits.png" id="1_c1t8d"]
+[ext_resource type="Script" uid="uid://chf0hlqf226qc" path="res://credits.gd" id="1_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://b8dbljs7s4tef" path="res://Assets/orion.png" id="2_g4wvt"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4wvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958.265, 539.905)
+scale = Vector2(1.001, 0.995)
+texture = ExtResource("1_c1t8d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(976, 624)
+scale = Vector2(0.949, 0.93)
+texture = ExtResource("2_g4wvt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1731.0
+offset_top = 1041.0
+offset_right = 1875.0
+offset_bottom = 1069.0
+scale = Vector2(1.31, 1.31)
+theme_override_font_sizes/font_size = 20
+text = "Version 0.1"
+
+[node name="Hussain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 271.0
+offset_right = 287.679
+offset_bottom = 338.426
+scale = Vector2(2.53, 2.53)
+text = "Hussain 
+Ahmed"
+
+[node name="Farees" type="Button" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 271.0
+offset_right = 929.324
+offset_bottom = 338.426
+scale = Vector2(2.53, 2.53)
+text = "Farees Farooq
+Ismail"
+
+[node name="Sahil" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1376.0
+offset_top = 279.0
+offset_right = 1558.68
+offset_bottom = 346.426
+scale = Vector2(2.53, 2.53)
+text = "Sahil 
+Hardasani"
+
+[node name="Hayyan" type="Button" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 720.0
+offset_right = 294.324
+offset_bottom = 787.426
+scale = Vector2(2.53, 2.53)
+text = "Hayyan 
+Serwer"
+
+[node name="Mohsin" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1376.0
+offset_top = 720.0
+offset_right = 1558.68
+offset_bottom = 787.426
+scale = Vector2(2.53, 2.53)
+text = "Mohsin
+Siddiqui"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 920.0
+offset_right = 924.954
+offset_bottom = 962.251
+scale = Vector2(3.03, 3.03)
+text = "Back
+"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
