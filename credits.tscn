@@ -24,6 +24,7 @@ scale = Vector2(0.949, 0.93)
 texture = ExtResource("2_g4wvt")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1731.0
 offset_top = 1041.0
 offset_right = 1875.0
@@ -33,6 +34,7 @@ theme_override_font_sizes/font_size = 20
 text = "Version 0.1"
 
 [node name="Hussain" type="Button" parent="."]
+layout_mode = 0
 offset_left = 105.0
 offset_top = 271.0
 offset_right = 287.679
@@ -42,6 +44,7 @@ text = "Hussain
 Ahmed"
 
 [node name="Farees" type="Button" parent="."]
+layout_mode = 0
 offset_left = 744.0
 offset_top = 271.0
 offset_right = 929.324
@@ -51,6 +54,7 @@ text = "Farees Farooq
 Ismail"
 
 [node name="Sahil" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1376.0
 offset_top = 279.0
 offset_right = 1558.68
@@ -60,6 +64,7 @@ text = "Sahil
 Hardasani"
 
 [node name="Hayyan" type="Button" parent="."]
+layout_mode = 0
 offset_left = 105.0
 offset_top = 720.0
 offset_right = 294.324
@@ -69,6 +74,7 @@ text = "Hayyan
 Serwer"
 
 [node name="Mohsin" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1376.0
 offset_top = 720.0
 offset_right = 1558.68
@@ -78,6 +84,7 @@ text = "Mohsin
 Siddiqui"
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 840.0
 offset_top = 920.0
 offset_right = 924.954
