@@ -1,5 +1,5 @@
 extends Control
-var masterbus= AudioServer.get_bus_index("Master")
+
 
 func _on_multi_player_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
@@ -28,10 +28,3 @@ func _on_resolution_item_selected(index):
 			DisplayServer.window_set_size(Vector2i(1920,720))
 		2:
 			DisplayServer.window_set_size(Vector2i(800,600))
-
-
-
-
-
-func _on_check_box_pressed():
-	AudioServer.set_bus_mute(masterbus,not AudioServer.is_bus_mute(masterbus))

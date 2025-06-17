@@ -17,15 +17,6 @@ grow_vertical = 2
 theme = ExtResource("1_07a1d")
 script = ExtResource("1_5v8ap")
 
-<<<<<<< HEAD
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-stream = ExtResource("2_se8ut")
-autoplay = true
-loop = true
-=======
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(961, 542)
 texture = ExtResource("2_07a1d")
@@ -44,20 +35,6 @@ offset_bottom = 1069.0
 scale = Vector2(1.31, 1.31)
 theme_override_font_sizes/font_size = 20
 text = "Version 0.1"
-
-[node name="Mute" type="Label" parent="."]
-layout_mode = 2
-offset_left = 896.0
-offset_top = 553.0
-offset_right = 1078.0
-offset_bottom = 571.0
-scale = Vector2(3.81484, 4.78416)
-theme = ExtResource("1_07a1d")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Mute"
->>>>>>> 9c2375924da281d362c5cc5ea77544882172bc39
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -83,9 +60,6 @@ layout_mode = 2
 max_value = 1.5
 step = 0.001
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 0
@@ -103,6 +77,5 @@ text = "Back
 "
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
