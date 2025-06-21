@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://xxcy1ydtfjjq"]
+[gd_scene load_steps=5 format=3 uid="uid://xxcy1ydtfjjq"]
 
 [ext_resource type="Texture2D" uid="uid://bjm8dwp37uxi3" path="res://Assets/credits.png" id="1_c1t8d"]
 [ext_resource type="Script" uid="uid://chf0hlqf226qc" path="res://credits.gd" id="1_g4wvt"]
 [ext_resource type="Texture2D" uid="uid://b8dbljs7s4tef" path="res://Assets/orion.png" id="2_g4wvt"]
+[ext_resource type="Theme" uid="uid://dwwyrjjhymh8l" path="res://Assets/kenneyUI-yellow.tres" id="4_pjc1l"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -40,6 +41,7 @@ offset_top = 271.0
 offset_right = 287.679
 offset_bottom = 338.426
 scale = Vector2(2.53, 2.53)
+theme = ExtResource("4_pjc1l")
 text = "Hussain 
 Ahmed"
 
@@ -50,6 +52,7 @@ offset_top = 271.0
 offset_right = 929.324
 offset_bottom = 338.426
 scale = Vector2(2.53, 2.53)
+theme = ExtResource("4_pjc1l")
 text = "Farees Farooq
 Ismail"
 
@@ -60,6 +63,7 @@ offset_top = 279.0
 offset_right = 1558.68
 offset_bottom = 346.426
 scale = Vector2(2.53, 2.53)
+theme = ExtResource("4_pjc1l")
 text = "Sahil 
 Hardasani"
 
@@ -70,6 +74,7 @@ offset_top = 720.0
 offset_right = 294.324
 offset_bottom = 787.426
 scale = Vector2(2.53, 2.53)
+theme = ExtResource("4_pjc1l")
 text = "Hayyan 
 Serwer"
 
@@ -80,6 +85,7 @@ offset_top = 720.0
 offset_right = 1558.68
 offset_bottom = 787.426
 scale = Vector2(2.53, 2.53)
+theme = ExtResource("4_pjc1l")
 text = "Mohsin
 Siddiqui"
 
@@ -90,6 +96,7 @@ offset_top = 920.0
 offset_right = 924.954
 offset_bottom = 962.251
 scale = Vector2(3.03, 3.03)
+theme = ExtResource("4_pjc1l")
 text = "Back
 "
 
