@@ -1,12 +1,29 @@
 extends Node2D
 
+# Preload all plastic trash textures here (replace paths with your actual files)
 var textures: Array[Texture2D] = [
+	preload("res://Assets/Standard Trash/trash_plastic.png"),
+	preload("res://Assets/Standard Trash/trash_plastic.png"),
 	preload("res://Assets/Standard Trash/trash_plastic.png")
 ]
-@onready var sprite = $PlasticSprite
-var trash_type = "plastic"
-func _ready():
 
-	randomize()
-	if textures.size() > 0:
-		sprite.texture = textures[randi() % textures.size()]
+@onready var sprite: Sprite2D = $PlasticSprite
+var trash_type = "plastic"
+
+var pending_texture_index: int = -1
+
+func _ready():
+	if pending_texture_index != -1:
+		set_texture_index(pending_texture_index)
+
+func set_texture_index(index: int):
+	if index < 0 or index >= textures.size():
+		push_warning("Texture index %d out of bounds for %s (max index %d)" % [index, trash_type, textures.size()-1])
+		return
+	
+	if is_inside_tree():
+		sprite.texture = textures[index]
+	else:
+		pending_texture_index = index
+func get_texture_size():
+	return textures.size()

@@ -10,3 +10,4 @@ func _ready():
 
 func _on_trash_dropped(correct: bool):
 	score_manager.update_score(correct)
+	

@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bht7r0u3quk7b"]
 
 [ext_resource type="Texture2D" uid="uid://cd4v7ptfbq2up" path="res://Assets/png/trash can/selective - front/5.png" id="1_bsy46"]
-[ext_resource type="Script" path="res://trash_can_container.gd" id="1_skybd"]
-[ext_resource type="Script" path="res://restmull_area.gd" id="2_a4jdi"]
+[ext_resource type="Script" uid="uid://004nkfvkjhsp" path="res://trash_can_container.gd" id="1_skybd"]
+[ext_resource type="Script" uid="uid://b4o0p16opfkfj" path="res://restmull_area.gd" id="2_a4jdi"]
 [ext_resource type="Texture2D" uid="uid://cetu3pbxuyhfl" path="res://Assets/png/trash can/selective - front/4.png" id="2_lgq00"]
 [ext_resource type="Texture2D" uid="uid://cyfke1cfcxp7y" path="res://Assets/png/trash can/selective - front/6.png" id="3_5dfql"]
-[ext_resource type="Script" path="res://bio_area.gd" id="4_skybd"]
-[ext_resource type="Script" path="res://plastic_area.gd" id="6_xqf0v"]
+[ext_resource type="Script" uid="uid://cu4s7d4pggun8" path="res://bio_area.gd" id="4_skybd"]
+[ext_resource type="Script" uid="uid://ni8fmhrcmbm5" path="res://plastic_area.gd" id="6_xqf0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsy46"]
 size = Vector2(104.922, 191.329)

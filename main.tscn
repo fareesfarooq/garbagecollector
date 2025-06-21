@@ -46,10 +46,7 @@ layout_mode = 2
 text = "join"
 
 [node name="Node2D" parent="." instance=ExtResource("2_0xm2m")]
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://cr68m2ptisg1b")
-spawn_path = NodePath("..")
+position = Vector2(-388, -167)
 
 [node name="TrashSpawner" parent="." instance=ExtResource("3_1bvp3")]
 position = Vector2(-434, -200)
@@ -57,9 +54,20 @@ position = Vector2(-434, -200)
 [node name="TrashCanContainer" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(-499, -176)
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://cr68m2ptisg1b")
+spawn_path = NodePath("..")
+
 [node name="ScoreUI" type="Node2D" parent="."]
 
-[node name="Title" type="Label" parent="ScoreUI"]
+[node name="Score2" type="Label" parent="ScoreUI"]
+offset_left = -158.0
+offset_top = -117.0
+offset_right = -89.0
+offset_bottom = -94.0
+text = "SCORE: 0"
+
+[node name="Score1" type="Label" parent="ScoreUI"]
 offset_left = 33.0
 offset_top = -119.0
 offset_right = 86.0
