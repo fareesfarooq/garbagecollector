@@ -9,6 +9,9 @@
 position = Vector2(434, 200)
 script = ExtResource("1_0xm2m")
 
+[node name="TrashSpawner" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-435, -203)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(202, 141)
 rotation = -0.00336998
@@ -47,9 +50,6 @@ text = "join"
 
 [node name="Node2D" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(-388, -167)
-
-[node name="TrashSpawner" parent="." instance=ExtResource("3_1bvp3")]
-position = Vector2(-434, -200)
 
 [node name="TrashCanContainer" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(-499, -176)
