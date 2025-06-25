@@ -55,7 +55,7 @@ func _on_host_pressed():
 		$TrashSpawner.start_spawning()
 
 func _on_join_pressed():
-	peer.create_client("localhost", 25565)
+	peer.create_client("192.168.0.101", 25565)
 	multiplayer.multiplayer_peer = peer
 	
 	multiplayer.connected_to_server.connect(

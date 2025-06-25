@@ -1,10 +1,10 @@
 extends Node2D
-
 @export var paper_trash_scene = preload("res://PaperTrash.tscn")
 @export var plastic_trash_scene = preload("res://PlasticTrash.tscn")
 @export var organic_trash_scene = preload("res://OrganicTrash.tscn")
 @export var spawn_interval: float = 2.0  # seconds
-
+@export var max_trash_count: int = 15
+var current_trash_nodes: int = 0
 var screen_size = get_viewport_rect().size
 var trash_history = []  # Stores {index, pos, texture_index, trash_id} dictionaries
 var trash_scenes = []
@@ -28,6 +28,10 @@ func start_timer():
 
 @rpc("authority")
 func spawn_random_trash():
+	# Check if we've reached the maximum trash count
+	if current_trash_nodes >= max_trash_count:
+		return  # Don't spawn more trash
+		
 	var scene_index = randi() % trash_scenes.size()
 	var chosen_scene = trash_scenes[scene_index]
 	var temp_instance = chosen_scene.instantiate()
@@ -35,7 +39,7 @@ func spawn_random_trash():
 	temp_instance.queue_free()  # Clean up temp instance
 	
 	var pos = Vector2(randf_range(0, 1000), randf_range(0, 1000))
-	
+	current_trash_nodes += 1
 	# Generate unique trash ID
 	trash_id_counter += 1
 	var trash_id = "Trash_" + str(trash_id_counter)
@@ -45,6 +49,14 @@ func spawn_random_trash():
 	instance.position = pos
 	instance.set_texture_index(texture_index)
 	get_parent().add_child(instance)
+	
+	# Connect to the trash's cleanup signal to update counter when removed
+	if instance.has_signal("trash_collected") or instance.has_signal("tree_exited"):
+		# Use whichever signal your trash nodes emit when collected/removed
+		if instance.has_signal("trash_collected"):
+			instance.connect("trash_collected", Callable(self, "_on_trash_removed"))
+		else:
+			instance.connect("tree_exited", Callable(self, "_on_trash_removed"))
 	
 	var trash_data = {
 		"scene_index": scene_index,
@@ -69,6 +81,14 @@ func rpc_spawn_trash(scene_index: int, pos_arr: Array, texture_index: int, trash
 	instance.position = pos
 	instance.set_texture_index(texture_index)
 	get_parent().add_child(instance)
+
+# Call this function when trash is collected/removed
+func _on_trash_removed():
+	current_trash_nodes = max(0, current_trash_nodes - 1)
+	
+# Alternative: Manually decrement counter when trash is collected
+func on_trash_collected():
+	current_trash_nodes = max(0, current_trash_nodes - 1)
 		
 func send_trash_history_to_peer(peer_id):
 	for trash in trash_history:
