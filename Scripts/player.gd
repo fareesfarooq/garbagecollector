@@ -24,16 +24,20 @@ func _process(delta):
 	if !is_multiplayer_authority():
 		return
 		
-	var velocity = Vector2.ZERO
+	var input_vector = Vector2.ZERO
+
 	if Input.is_key_pressed(KEY_D):
-		velocity.x += 1
-		$AnimatedSprite2D.animation = "walk_right"
+		input_vector.x += 1
 	if Input.is_key_pressed(KEY_A):
-		velocity.x -= 1
+		input_vector.x -= 1
 	if Input.is_key_pressed(KEY_W):
-		velocity.y -= 1
+		input_vector.y -= 1
 	if Input.is_key_pressed(KEY_S):
-		velocity.y += 1
+		input_vector.y += 1
+
+	input_vector = input_vector.normalized()
+	velocity = input_vector * speed  # set CharacterBody2D's built-in velocity
+	move_and_slide()
 		
 	if Input.is_action_just_pressed("interact"):
 		if held_trash == null:
@@ -42,16 +46,29 @@ func _process(delta):
 		print("Drop key pressed by player %d" % multiplayer.get_unique_id())
 		drop_trash()
 		
-	if velocity == Vector2.ZERO:
+	# Animation handling
+	if input_vector == Vector2.ZERO:
 		$AnimatedSprite2D.animation = "idle"
-		
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
 		$AnimatedSprite2D.stop()
-		
-	position += velocity * delta
+	else:
+		if input_vector.x > 0 and input_vector.y < 0:
+			$AnimatedSprite2D.animation = "walk_top_right"
+		elif input_vector.x > 0 and input_vector.y > 0:
+			$AnimatedSprite2D.animation = "walk_down_right"
+		elif input_vector.x < 0 and input_vector.y < 0:
+			$AnimatedSprite2D.animation = "walk_top_left"
+		elif input_vector.x < 0 and input_vector.y > 0:
+			$AnimatedSprite2D.animation = "walk_down_left"
+		elif input_vector.x > 0:
+			$AnimatedSprite2D.animation = "walk_right"
+		elif input_vector.x < 0:
+			$AnimatedSprite2D.animation = "walk_left"
+		elif input_vector.y < 0:
+			$AnimatedSprite2D.animation = "walk_up"
+		elif input_vector.y > 0:
+			$AnimatedSprite2D.animation = "walk_down"
+
+		$AnimatedSprite2D.play()
 
 func pickup_trash():
 	if nearby_trash.size() > 0:
