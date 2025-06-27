@@ -78,6 +78,15 @@ func pickup_trash():
 			print("Trash already picked up by someone else!")
 			return
 			
+		# Simple pickup sound
+		var audio = AudioStreamPlayer.new()
+		add_child(audio)
+		audio.stream = load("res://Assets/swoosh_pick.mp3")
+		audio.play()
+		
+		# Send RPC to all players about pickup
+		rpc("sync_pickup_trash", trash.get_path(), multiplayer.get_unique_id())
+			
 		# Send RPC to all players about pickup
 		rpc("sync_pickup_trash", trash.get_path(), multiplayer.get_unique_id())
 
@@ -121,6 +130,12 @@ func drop_trash():
 		var trash_name = held_trash.name
 		
 		print("Player %d attempting to drop trash: %s into %s bin" % [multiplayer.get_unique_id(), trash_type, bin_type])
+		
+		# Simple drop sound
+		var audio = AudioStreamPlayer.new()
+		add_child(audio)
+		audio.stream = load("res://Assets/swoosh_drop.mp3")
+		audio.play()
 		
 		# Send RPC to sync the drop and score update
 		rpc("sync_drop_trash", trash_name, multiplayer.get_unique_id(), bin_type, trash_type)

@@ -254,7 +254,8 @@ script = ExtResource("1_kpjcp")
 texture_filter = 1
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_xhfnw")
-animation = &"idle"
+animation = &"walk_up"
+frame_progress = 0.176218
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.3125, 44.5)

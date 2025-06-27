@@ -1,58 +1,60 @@
 [gd_scene load_steps=9 format=3 uid="uid://bht7r0u3quk7b"]
 
-[ext_resource type="Texture2D" uid="uid://cd4v7ptfbq2up" path="res://Assets/png/trash can/selective - front/5.png" id="1_bsy46"]
 [ext_resource type="Script" uid="uid://004nkfvkjhsp" path="res://trash_can_container.gd" id="1_skybd"]
 [ext_resource type="Script" uid="uid://b4o0p16opfkfj" path="res://restmull_area.gd" id="2_a4jdi"]
-[ext_resource type="Texture2D" uid="uid://cetu3pbxuyhfl" path="res://Assets/png/trash can/selective - front/4.png" id="2_lgq00"]
-[ext_resource type="Texture2D" uid="uid://cyfke1cfcxp7y" path="res://Assets/png/trash can/selective - front/6.png" id="3_5dfql"]
+[ext_resource type="Texture2D" uid="uid://dbj5i46l5a6bd" path="res://Assets/blackcan.png" id="2_skybd"]
 [ext_resource type="Script" uid="uid://cu4s7d4pggun8" path="res://bio_area.gd" id="4_skybd"]
+[ext_resource type="Texture2D" uid="uid://b7cmcxxgog6qt" path="res://Assets/yelcan.png" id="4_xqf0v"]
+[ext_resource type="Texture2D" uid="uid://cu487ugqr4reo" path="res://Assets/gruncan.png" id="6_qoxy0"]
 [ext_resource type="Script" uid="uid://ni8fmhrcmbm5" path="res://plastic_area.gd" id="6_xqf0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsy46"]
-size = Vector2(104.922, 191.329)
+size = Vector2(16.1763, 16.3184)
 
 [node name="TrashCanContainer" type="Node2D"]
 script = ExtResource("1_skybd")
 
 [node name="Restmull" type="Sprite2D" parent="." groups=["Dustbin", "Restmull"]]
-position = Vector2(221, 115)
-scale = Vector2(1.13417, 1.13417)
-texture = ExtResource("1_bsy46")
+position = Vector2(152.232, 57.7317)
+scale = Vector2(5.59604, 5.90854)
+texture = ExtResource("2_skybd")
 
 [node name="Restmull Area" type="Area2D" parent="Restmull" groups=["Dustbin"]]
+position = Vector2(0.494694, 0.553155)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_a4jdi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Restmull/Restmull Area"]
-position = Vector2(0.440872, -0.440857)
+position = Vector2(-0.536093, 0.169246)
 shape = SubResource("RectangleShape2D_bsy46")
 
 [node name="Bio" type="Sprite2D" parent="." groups=["Bio", "Dustbin"]]
-position = Vector2(761, 114)
-scale = Vector2(1.16342, 1.16342)
-texture = ExtResource("3_5dfql")
+position = Vector2(351, 62)
+scale = Vector2(5.66585, 6.3221)
+texture = ExtResource("4_xqf0v")
 
 [node name="BioArea" type="Area2D" parent="Bio" groups=["Dustbin"]]
+position = Vector2(-0.6548, -0.204326)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_skybd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bio/BioArea"]
-position = Vector2(0.440872, -0.440857)
+position = Vector2(1.00779, 0.0461512)
 shape = SubResource("RectangleShape2D_bsy46")
 
 [node name="Plastic" type="Sprite2D" parent="." groups=["Dustbin"]]
-position = Vector2(1357, 123)
-scale = Vector2(1.17947, 1.17947)
-texture = ExtResource("2_lgq00")
+position = Vector2(535.821, 63.9455)
+scale = Vector2(5.89743, 6.50681)
+texture = ExtResource("6_qoxy0")
 
 [node name="PlasticArea" type="Area2D" parent="Plastic" groups=["Dustbin"]]
-position = Vector2(0, 0.847837)
+position = Vector2(-0.193429, 1.70985)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("6_xqf0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plastic/PlasticArea"]
-position = Vector2(0.440872, -0.440857)
+position = Vector2(-0.233879, -2.17644)
 shape = SubResource("RectangleShape2D_bsy46")
