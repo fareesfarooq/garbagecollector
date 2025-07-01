@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bht7r0u3quk7b" path="res://trash_can_container.tscn" id="4_1bvp3"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(452, 219)
+position = Vector2(623, 93)
+scale = Vector2(0.998551, 1.01195)
 script = ExtResource("1_0xm2m")
 
 [node name="TrashSpawner" parent="." instance=ExtResource("3_1bvp3")]

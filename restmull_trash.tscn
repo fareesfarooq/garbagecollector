@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://2neysu4miimh"]
+
+[ext_resource type="Script" uid="uid://dvdqywkjofewb" path="res://organic_trash.gd" id="1_qq14u"]
+[ext_resource type="Texture2D" uid="uid://dsbsksygcq433" path="res://Assets/Standard Trash/trash_apple.png" id="2_jwwcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfo5"]
+size = Vector2(89, 119.5)
+
+[node name="Node2D2" type="Node2D" groups=["Trash"]]
+position = Vector2(8, 3)
+script = ExtResource("1_qq14u")
+
+[node name="OrganicSprite" type="Sprite2D" parent="."]
+position = Vector2(12, 12)
+texture = ExtResource("2_jwwcm")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.5, 10.75)
+shape = SubResource("RectangleShape2D_8pfo5")

@@ -1,10 +1,7 @@
 extends Node2D
 
 var textures: Array[Texture2D] = [
-	preload("res://Assets/Standard Trash/trash_apple.png"),
-	preload("res://Assets/Standard Trash/trash_bone.png"),
-	preload("res://Assets/Standard Trash/trash_chese.png"),
-	preload("res://Assets/Standard Trash/trash_bread.png")
+	preload("res://Assets/trash assets/alcohol 1.png"),
 ]
 @onready var sprite = $OrganicSprite
 

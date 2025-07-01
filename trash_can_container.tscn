@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bht7r0u3quk7b"]
+[gd_scene load_steps=10 format=3 uid="uid://bht7r0u3quk7b"]
 
 [ext_resource type="Script" uid="uid://004nkfvkjhsp" path="res://trash_can_container.gd" id="1_skybd"]
 [ext_resource type="Script" uid="uid://b4o0p16opfkfj" path="res://restmull_area.gd" id="2_a4jdi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7cmcxxgog6qt" path="res://Assets/yelcan.png" id="4_xqf0v"]
 [ext_resource type="Texture2D" uid="uid://cu487ugqr4reo" path="res://Assets/gruncan.png" id="6_qoxy0"]
 [ext_resource type="Script" uid="uid://ni8fmhrcmbm5" path="res://plastic_area.gd" id="6_xqf0v"]
+[ext_resource type="Texture2D" uid="uid://d1h4iqj1shp4d" path="res://Assets/bluecan.png" id="8_xqf0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsy46"]
 size = Vector2(16.1763, 16.3184)
@@ -56,5 +57,20 @@ collision_mask = 0
 script = ExtResource("6_xqf0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plastic/PlasticArea"]
+position = Vector2(-0.233879, -2.17644)
+shape = SubResource("RectangleShape2D_bsy46")
+
+[node name="Paper" type="Sprite2D" parent="." groups=["Dustbin"]]
+position = Vector2(710, 62)
+scale = Vector2(5.89743, 6.50681)
+texture = ExtResource("8_xqf0v")
+
+[node name="PlasticArea" type="Area2D" parent="Paper" groups=["Dustbin"]]
+position = Vector2(-0.193429, 1.70985)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("6_xqf0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paper/PlasticArea"]
 position = Vector2(-0.233879, -2.17644)
 shape = SubResource("RectangleShape2D_bsy46")
