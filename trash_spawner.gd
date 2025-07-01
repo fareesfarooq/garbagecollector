@@ -2,6 +2,7 @@ extends Node2D
 @export var paper_trash_scene = preload("res://PaperTrash.tscn")
 @export var plastic_trash_scene = preload("res://PlasticTrash.tscn")
 @export var organic_trash_scene = preload("res://OrganicTrash.tscn")
+@export var restmull_trash_scene = preload("res://restmull_trash.tscn")
 @export var spawn_interval: float = 2.0  # seconds
 @export var max_trash_items: int = 10  # Maximum trash items on screen
 var screen_size = get_viewport_rect().size
@@ -11,7 +12,7 @@ var trash_id_counter = 0  # For unique trash naming
 var active_trash_count = 0  # Track how many trash items are currently active
 
 func _ready():
-	trash_scenes = [paper_trash_scene, plastic_trash_scene, organic_trash_scene]
+	trash_scenes = [paper_trash_scene, plastic_trash_scene, organic_trash_scene, restmull_trash_scene]
 
 func start_spawning():
 	randomize()

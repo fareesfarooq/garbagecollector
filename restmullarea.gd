@@ -1,5 +1,5 @@
 extends Area2D
-@export var accepts_type: String = "organic"
+@export var accepts_type: String = "paper"
 
 signal trash_dropped(correct: bool)
 

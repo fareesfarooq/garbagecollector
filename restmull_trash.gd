@@ -1,14 +1,12 @@
 extends Node2D
 
 var textures: Array[Texture2D] = [
-	preload("res://Assets/Standard Trash/trash_apple.png"),
-	preload("res://Assets/Standard Trash/trash_bone.png"),
-	preload("res://Assets/Standard Trash/trash_chese.png"),
-	preload("res://Assets/Standard Trash/trash_bread.png")
+	preload("res://Assets/png/garbage bag/1.png"),
 ]
-@onready var sprite = $OrganicSprite
 
-var trash_type = "organic"
+var trash_type = "restmull"
+
+@onready var sprite = $RestmullSprite
 
 var pending_texture_index: int = -1
 
@@ -25,6 +23,6 @@ func set_texture_index(index: int):
 		sprite.texture = textures[index]
 	else:
 		pending_texture_index = index
-
+		
 func get_texture_size():
 	return textures.size()
