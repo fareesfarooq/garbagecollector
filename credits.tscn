@@ -21,7 +21,7 @@ texture = ExtResource("1_c1t8d")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(976, 624)
-scale = Vector2(0.949, 0.93)
+scale = Vector2(0.734, 0.719)
 texture = ExtResource("2_g4wvt")
 
 [node name="Label" type="Label" parent="."]
@@ -36,10 +36,10 @@ text = "Version 0.1"
 
 [node name="Hussain" type="Button" parent="."]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 271.0
-offset_right = 287.679
-offset_bottom = 338.426
+offset_left = 110.0
+offset_top = 315.0
+offset_right = 292.679
+offset_bottom = 382.426
 scale = Vector2(2.53, 2.53)
 theme = ExtResource("4_pjc1l")
 text = "Hussain 
@@ -47,10 +47,10 @@ Ahmed"
 
 [node name="Farees" type="Button" parent="."]
 layout_mode = 0
-offset_left = 744.0
-offset_top = 271.0
-offset_right = 929.324
-offset_bottom = 338.426
+offset_left = 736.0
+offset_top = 312.0
+offset_right = 921.324
+offset_bottom = 379.426
 scale = Vector2(2.53, 2.53)
 theme = ExtResource("4_pjc1l")
 text = "Farees Farooq
@@ -58,10 +58,10 @@ Ismail"
 
 [node name="Sahil" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1376.0
-offset_top = 279.0
-offset_right = 1558.68
-offset_bottom = 346.426
+offset_left = 1344.0
+offset_top = 304.0
+offset_right = 1526.68
+offset_bottom = 371.426
 scale = Vector2(2.53, 2.53)
 theme = ExtResource("4_pjc1l")
 text = "Sahil 
@@ -69,10 +69,10 @@ Hardasani"
 
 [node name="Hayyan" type="Button" parent="."]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 720.0
-offset_right = 294.324
-offset_bottom = 787.426
+offset_left = 112.0
+offset_top = 728.0
+offset_right = 301.324
+offset_bottom = 795.426
 scale = Vector2(2.53, 2.53)
 theme = ExtResource("4_pjc1l")
 text = "Hayyan 
@@ -80,9 +80,9 @@ Serwer"
 
 [node name="Mohsin" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1376.0
+offset_left = 1344.0
 offset_top = 720.0
-offset_right = 1558.68
+offset_right = 1526.68
 offset_bottom = 787.426
 scale = Vector2(2.53, 2.53)
 theme = ExtResource("4_pjc1l")
