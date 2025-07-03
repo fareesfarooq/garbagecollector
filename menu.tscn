@@ -33,7 +33,7 @@ offset_right = 1875.0
 offset_bottom = 1069.0
 scale = Vector2(1.31, 1.31)
 theme_override_font_sizes/font_size = 20
-text = "Version 0.1"
+text = "Version 1.0"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -49,12 +49,12 @@ layout_mode = 2
 [node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_4hy44")
-text = "Singleplayer"
+text = "Start"
 
 [node name="MultiPlayer" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_4hy44")
-text = "Multiplayer"
+text = "Tutorial"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv1ott8folspi"]
+
+[ext_resource type="Texture2D" uid="uid://bcnp17ef0a6jo" path="res://Assets/Tutorial.png" id="1_fr6qw"]
+[ext_resource type="Script" uid="uid://bekynsqsstq18" path="res://tutorial.gd" id="1_oiqhk"]
+[ext_resource type="Theme" uid="uid://dwwyrjjhymh8l" path="res://Assets/kenneyUI-yellow.tres" id="2_oiqhk"]
+[ext_resource type="Script" uid="uid://b4442tiodk7m" path="res://button.gd" id="3_p3v23"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_oiqhk")
+
+[node name="Tutorial" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+texture = ExtResource("1_fr6qw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 107.324
+offset_bottom = 90.251
+scale = Vector2(3.245, 3.245)
+theme = ExtResource("2_oiqhk")
+text = "Back"
+script = ExtResource("3_p3v23")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
