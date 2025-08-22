@@ -57,6 +57,9 @@ layout_mode = 2
 theme = ExtResource("3_7mycd")
 text = "JOIN"
 
+[node name="LineEdit" type="LineEdit" parent="UI/Multiplayer/VBoxContainer"]
+layout_mode = 2
+
 [node name="VictoryScreen" type="Sprite2D" parent="UI"]
 position = Vector2(1262, 445)
 scale = Vector2(0.679998, 0.679998)

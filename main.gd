@@ -6,7 +6,7 @@ var peer = ENetMultiplayerPeer.new()
 var score1_label
 var score2_label
 var victory_ui  
-	
+var ip_text 	
 var player_scores = {} 
 var game_ended = false  
 const WINNING_SCORE = 20 
@@ -15,7 +15,7 @@ func _ready():
 	score1_label = $ScoreUI/Score1
 	score2_label = $ScoreUI/Score2
 	victory_ui = $UI/VictoryScreen
-	
+	ip_text = $UI/Multiplayer/VBoxContainer/LineEdit
 
 	
 	score2_label.visible = false
@@ -59,7 +59,7 @@ func _on_host_pressed():
 		$TrashSpawner.start_spawning()
 
 func _on_join_pressed():
-	peer.create_client("localhost", 25565)
+	peer.create_client(str(ip_text.text), 25565)
 	multiplayer.multiplayer_peer = peer
 	
 	multiplayer.connected_to_server.connect(
