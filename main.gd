@@ -1,5 +1,7 @@
 extends Node2D
+
 @onready var multiplayer_ui = $UI/Multiplayer
+@onready var score_sound = $ScoreSound
 const PLAYER = preload("res://Player.tscn")
 var player_instance = PLAYER.instantiate()
 var peer = ENetMultiplayerPeer.new()
@@ -12,8 +14,9 @@ var game_ended = false
 const WINNING_SCORE = 20 
 
 func _ready():
-	score1_label = $ScoreUI/Score1
-	score2_label = $ScoreUI/Score2
+	
+	score1_label = $UI/ScoreUI/Score1
+	score2_label = $UI/ScoreUI/Score2
 	victory_ui = $UI/VictoryScreen
 	ip_text = $UI/Multiplayer/VBoxContainer/LineEdit
 
@@ -40,7 +43,7 @@ func _on_host_pressed():
 			add_player(pid)
 			$TrashSpawner.send_trash_history_to_peer(pid)
 			send_scores_to_peer(pid)
-			if get_child_count() >= 3: 
+			if player_scores.size() >= 2:
 				score2_label.visible = true
 	)
 	
@@ -49,7 +52,7 @@ func _on_host_pressed():
 			print("Peer " + str(pid) + " has left the game!")
 			remove_player(pid)
 
-			if get_child_count() <= 3:
+			if player_scores.size() <= 1:
 				score2_label.visible = false
 	)
 	add_player(multiplayer.get_unique_id())
@@ -91,16 +94,24 @@ func update_player_score(player_id: int, new_score: int):
 	update_score_display()
 
 @rpc("authority", "call_local", "reliable") 
+
 func sync_score_update(player_id: int, new_score: int):
 	if not player_id in player_scores:
 		player_scores[player_id] = 0
 	
+	var old_score = player_scores[player_id]
 	player_scores[player_id] = new_score
+	
+	# Play sound if score increased
+	if new_score > old_score:
+		score_sound.play()
+	
 	print("Score updated for player %d: %d (Total players: %d)" % [player_id, new_score, player_scores.size()])
 	update_score_display()
+	check_victory_condition()
 	
 
-	check_victory_condition()
+	
 
 @rpc("any_peer", "call_remote", "reliable")
 func request_score_update(player_id: int, new_score: int):
@@ -180,7 +191,7 @@ func update_score_display():
 	
 	if player_ids.size() >= 1:
 		var first_player_id = player_ids[0]
-		var new_text = "Player 1: " + str(player_scores[first_player_id])
+		var new_text = str(player_scores[first_player_id])
 		score1_label.text = new_text
 		score1_label.visible = true
 		print("Score1 label updated: %s (visible: %s)" % [new_text, score1_label.visible])
@@ -189,7 +200,7 @@ func update_score_display():
 	
 	if player_ids.size() >= 2:
 		var second_player_id = player_ids[1]
-		var new_text = "Player 2: " + str(player_scores[second_player_id])
+		var new_text = str(player_scores[second_player_id])
 		score2_label.text = new_text
 		score2_label.visible = true
 		print("Score2 label updated: %s (visible: %s)" % [new_text, score2_label.visible])

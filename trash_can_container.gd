@@ -1,6 +1,5 @@
 extends Node2D
-
-@onready var score_manager = get_node("/root/main/Score")
+@onready var score_manager = get_node("/root/Node2D/UI/ScoreUI")
 
 func _ready():
 	for bin in get_children():
@@ -10,4 +9,3 @@ func _ready():
 
 func _on_trash_dropped(correct: bool):
 	score_manager.update_score(correct)
-	

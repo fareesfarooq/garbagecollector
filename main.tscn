@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://jdmftq25ymnw"]
+[gd_scene load_steps=10 format=3 uid="uid://jdmftq25ymnw"]
 
 [ext_resource type="Script" uid="uid://duxgvv7g1e308" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://i4ajthwt87g8" path="res://level1.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dxf2sxamyr2w6" path="res://TrashSpawner.tscn" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://j86g7o6y3u8h" path="res://Assets/Scoreboard.png" id="3_5vw27"]
 [ext_resource type="Theme" uid="uid://dwwyrjjhymh8l" path="res://Assets/kenneyUI-yellow.tres" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://p5gs5ngknb1c" path="res://Assets/fortnite-png-47383.png" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bht7r0u3quk7b" path="res://trash_can_container.tscn" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://1x5b4kihdxnh" path="res://Assets/Gameplay.ttf" id="5_kek77"]
+[ext_resource type="AudioStream" uid="uid://f7svyonqkxel" path="res://Assets/score.ogg" id="9_kek77"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(623, 93)
@@ -21,6 +24,35 @@ rotation = -0.00336998
 zoom = Vector2(1.4, 1.4)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" type="Node2D" parent="UI"]
+position = Vector2(1126.27, 238.721)
+scale = Vector2(0.998551, 1.01195)
+
+[node name="Scoreboard" type="Sprite2D" parent="UI/ScoreUI"]
+position = Vector2(280.136, -62.9683)
+scale = Vector2(0.200885, 0.175307)
+texture = ExtResource("3_5vw27")
+
+[node name="Score1" type="Label" parent="UI/ScoreUI"]
+offset_left = 175.985
+offset_top = -136.094
+offset_right = 265.985
+offset_bottom = -16.0945
+theme = ExtResource("3_7mycd")
+theme_override_fonts/font = ExtResource("5_kek77")
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="Score2" type="Label" parent="UI/ScoreUI"]
+offset_left = 314.185
+offset_top = -136.094
+offset_right = 404.185
+offset_bottom = -16.0945
+theme = ExtResource("3_7mycd")
+theme_override_fonts/font = ExtResource("5_kek77")
+theme_override_font_sizes/font_size = 100
+text = "0"
 
 [node name="Multiplayer" type="Control" parent="UI"]
 layout_mode = 3
@@ -76,24 +108,9 @@ scale = Vector2(0.597255, 0.597255)
 _spawnable_scenes = PackedStringArray("uid://cr68m2ptisg1b")
 spawn_path = NodePath("..")
 
-[node name="ScoreUI" type="Node2D" parent="."]
-position = Vector2(504, 144)
-
-[node name="Score2" type="Label" parent="ScoreUI"]
-offset_left = -158.0
-offset_top = -117.0
-offset_right = -89.0
-offset_bottom = -94.0
-theme = ExtResource("3_7mycd")
-text = "SCORE: 0"
-
-[node name="Score1" type="Label" parent="ScoreUI"]
-offset_left = 33.0
-offset_top = -119.0
-offset_right = 86.0
-offset_bottom = -96.0
-theme = ExtResource("3_7mycd")
-text = "SCORE: 0"
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kek77")
+volume_db = 20.0
 
 [connection signal="pressed" from="UI/Multiplayer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="UI/Multiplayer/VBoxContainer/Join" to="." method="_on_join_pressed"]
